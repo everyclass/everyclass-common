@@ -32,11 +32,11 @@ def print_config(app, logger):
         logger.info('Below are configurations we are using:')
         logger.info('================================================================')
         for key, value in app.config.items():
-            if key not in app.config.PRODUCTION_SECURE_FIELDS:
+            if key not in app.config["PRODUCTION_SECURE_FIELDS"]:
                 if any(map(lambda t: isinstance(value, t), (dict,))):
                     value = copy.copy(value)
                     for k in value.keys():
-                        if "{}.{}".format(key, k) in app.config.PRODUCTION_SECURE_FIELDS:
+                        if "{}.{}".format(key, k) in app.config["PRODUCTION_SECURE_FIELDS"]:
                             value[k] = '[secret]'
                 logger.info('{}: {}'.format(key, value))
             else:
