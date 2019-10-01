@@ -1,7 +1,9 @@
 import os
 
+from typing import Optional
 
-def get_env() -> str:
+
+def get_env() -> Optional[str]:
     return os.environ.get("MODE")
 
 
