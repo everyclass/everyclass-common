@@ -20,7 +20,7 @@ def init_pool(schema: str, config: Dict) -> None:
     final_option.update(config)
 
     global pool
-    pool = PooledDB(final_option)
+    pool = PooledDB(**final_option)
 
 
 @contextmanager
