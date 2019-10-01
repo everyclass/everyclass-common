@@ -1,10 +1,8 @@
 import os
 
-from typing import Optional
 
-
-def get_env() -> Optional[str]:
-    return os.environ.get("MODE")
+def get_env() -> str:
+    return os.environ.get("MODE") or "UNKNOWN"
 
 
 def is_production() -> bool:
