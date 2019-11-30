@@ -15,11 +15,16 @@ def init_pool(schema: Optional[str] = None, config: Optional[Dict] = None) -> No
     # more information at https://cito.github.io/DBUtils/UsersGuide.html
     global pool, cfg_schema, cfg_config
 
-    if not schema:
+    if schema:
+        cfg_schema = schema
+    else:
         if cfg_schema is None:
             raise RuntimeError("schema not set")
         schema = cfg_schema
-    if not config:
+
+    if config:
+        cfg_config = config
+    else:
         if cfg_config is None:
             raise RuntimeError("config not set")
         config = cfg_config
