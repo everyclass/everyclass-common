@@ -11,7 +11,7 @@ cfg_config = None
 
 
 def init_pool(schema: Optional[str] = None, config: Optional[Dict] = None) -> None:
-    """创建连接池"""
+    """创建连接池。第一次调用需要填写参数，后续可以不填。"""
     # more information at https://cito.github.io/DBUtils/UsersGuide.html
     global pool, cfg_schema, cfg_config
 
